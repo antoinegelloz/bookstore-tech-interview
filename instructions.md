@@ -81,10 +81,10 @@ Example of received body (based on previous examples):
 		"bookCost": 800,
 		"discountableBookIds": [3, 47, 83, 133, 194],
 		"discountScaling": [
-			{ "nbOfBooks": 5, "discountPercentage": 25}
-			{ "nbOfBooks": 4, "discountPercentage": 20},
-			{ "nbOfBooks": 3, "discountPercentage": 10},
 			{ "nbOfBooks": 2, "discountPercentage": 5},
+			{ "nbOfBooks": 3, "discountPercentage": 10},
+			{ "nbOfBooks": 4, "discountPercentage": 20},
+			{ "nbOfBooks": 5, "discountPercentage": 25}
 		] 
 	}
 

@@ -2,23 +2,24 @@ package main
 
 import (
 	"github.com/go-playground/assert/v2"
+	"github.com/stretchr/testify/require"
 	"testing"
 )
 
 func TestComputeCost(t *testing.T) {
-	testSettings := Settings{
+	require.NoError(t, validateAndSetSettings(Settings{
 		BookCost:            800,
 		DiscountableBookIDs: []int{3, 47, 83, 133, 194},
 		DiscountScaling: []Discount{
-			{5, 25},
-			{4, 20},
-			{3, 10},
 			{2, 5},
+			{3, 10},
+			{4, 20},
+			{5, 25},
 		},
-	}
+	}))
 
 	testBasket := Basket{
-		BookIds: []int{1, 3, 3, 47, 83, 133, 194},
+		BookIDs: []int{1, 3, 3, 47, 83, 133, 194},
 	}
 
 	expectedCost := Cost{
@@ -37,6 +38,6 @@ func TestComputeCost(t *testing.T) {
 		},
 	}
 
-	computedCost := computeCost(testSettings, testBasket)
+	computedCost := computeCost(testBasket)
 	assert.Equal(t, computedCost, expectedCost)
 }
