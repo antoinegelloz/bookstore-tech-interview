@@ -1,6 +1,6 @@
 #!/bin/sh
 
-curl -v -X POST \
+curl -v \
   http://localhost:8080/discountSettings \
   -H 'content-type: application/json' \
   -d '
@@ -16,7 +16,7 @@ curl -v -X POST \
   }
 '
 
-curl -v -X POST \
+curl -v \
   http://localhost:8080/cost \
   -H 'content-type: application/json' \
   -d '
