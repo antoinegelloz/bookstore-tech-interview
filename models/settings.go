@@ -22,6 +22,7 @@ func (x DiscountSlice) Len() int           { return len(x) }
 func (x DiscountSlice) Less(i, j int) bool { return x[i].NumBooks > x[j].NumBooks }
 func (x DiscountSlice) Swap(i, j int)      { x[i], x[j] = x[j], x[i] }
 
+// Validate ensure that the settings are realistic and sort the DiscountScaling slice by desc order.
 func (s *Settings) Validate() error {
 	sort.Sort(s.DiscountScaling)
 	for i, d := range s.DiscountScaling {
